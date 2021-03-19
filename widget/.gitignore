@@ -1,0 +1,5 @@
+.idea/
+.git
+.svn
+.project/node_modules
+node_modules

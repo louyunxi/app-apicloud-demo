@@ -1,0 +1,115 @@
+@charset "utf-8";
+html, body {height: 100%;margin: 0px;padding: 0px;color:#666;font-size:12px;-webkit-touch-callout: none;-webkit-user-select: none;-webkit-overflow-scrolling:touch;font-family:"microsoft yahei",Arial, Helvetica, sans-serif; background-color:#F7F7F7;}
+* { padding:0px; margin:0px;-webkit-overflow-scrolling:touch;}
+html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul, dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
+a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,
+strong, sub, sup, tt, var, legend, fieldset {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video, input{
+  vertical-align: middle;
+}
+ol,ul,li{list-style:none;list-style-image:none;list-style-position:outside;list-style-type:none;}
+img, fieldset,abbr,acronym {border:0 none;}
+del,ins{text-decoration:none; }
+a{ text-decoration:none; color:#000;outline:none;}
+table{ border-collapse:collapse;border-spacing: 0;  }
+i,b,address{ text-decoration:none; font-style:normal; font-weight: normal;}
+caption{ text-align:left;}
+time,mark{ margin:0px; padding:0px; background:none}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
+display: block;margin: 0;padding: 0;}
+sup {vertical-align: text-top;}
+sub {vertical-align: text-bottom;}
+textarea{border:none;outline:none;}
+/* 初始化标签在所有浏览器中的margin、padding值 */
+fieldset,img{border: 0 none}
+/* 重置fieldset（表单分组）、图片的边框为0*/
+dl,ul,ol,menu,li{list-style: none}
+/* 重置类表前导符号为none,menu在HTML5中有效 */
+blockquote, q{quotes: none}
+/* 重置嵌套引用的引号类型 */
+blockquote:before, blockquote:after,q:before, q:after{content: '';content: none}
+/* 重置嵌套引用*/
+input,select,textarea,button{vertical-align: middle}
+/* 重置表单控件垂直居中*/
+button{border: 0 none;background-color: transparent;cursor: pointer}
+/* 重置表单button按钮效果 */
+body{background-color:#F7F9FB;}
+/* 重置body背景色 */
+body,th,td,input,select,textarea,button{font-size: 12px;line-height: 1;font-family: "microsoft yahei", Arial, Helvetica, sans-serif;color: #666}
+/* 重置页面文字属性 */
+a{color: #666;text-decoration: none}
+/* 重置链接a标签 */
+a:active, a:hover{text-decoration: none}
+/* 重置链接a标签的鼠标滑动效果 */
+address,caption,cite,code,dfn,em,var{font-style: normal;font-weight: normal}
+/* 重置样式标签的样式 */
+caption{display: none;}
+/* 重置表格标题为隐藏 */
+table{width: 100%;border-collapse: collapse;border-spacing: 0;table-layout: fixed;}
+/* 重置table属性 */
+img{vertical-align: middle}
+/* 图片在当前行内的垂直位置 */
+/* 页面设置 */
+/* 取消a标签点击后的虚线框 */
+a{outline: none;}
+a:active{star: expression(this.onFocus=this.blur());}
+/*文字超长截断*/
+p{word-break:break-all;}
+/*清除浮动*/
+.clear{clear:both;}
+/*清除浮动--推荐使用*/
+.clearfix:before,.clearfix:after{content:'';display:table;}
+.clearfix:after{clear:both;}
+.fl{float:left;}
+.fr{float:right;}
+.pr{position:relative;}
+.pa{position:absolute;}
+.pf{position:fixed;}
+.pyc{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.noborder{border:none !important;}
+.borderBox{box-sizing:border-box;-webkit-box-sizing:border-box;}
+/*禁止文字被选中样式*/
+.textnoselect{-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none; user-select: none;}
+input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{ -webkit-appearance: none !important; margin: 0; }
+input[type="number"]{-moz-appearance:textfield;-webkit-appearance:textfield;}
+:-moz-placeholder{color: #c6c6c6; opacity: 1;}
+::-moz-placeholder{color: #c6c6c6;opacity: 1;}
+input:-ms-input-placeholder{color:#c6c6c6;opacity:1;}
+input::-webkit-input-placeholder{color:#c6c6c6;opacity:1;}
+input{outline:none;border:none;}
+::-ms-clear{display: none;}
+::-ms-reveal{display: none;}
+.hidden{display: none;}
+.iconfont{ font-family: "iconfont" !important; font-size: 16px; font-style: normal; -webkit-font-smoothing: antialiased; -webkit-text-stroke-width: 0.2px; -moz-osx-font-smoothing: grayscale;}
+.hidetext{width: 100%;display: inline-block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;box-sizing: border-box;}
+.m0{margin: 0;}
+.p0{padding: 0;}
+.hidden{display:none!important;}
+i{font-style: normal;}
+/*阿里字体*/
+@font-face {
+  font-family: 'iconfont';  /* project id 1328067 */
+  src: url('//at.alicdn.com/t/font_1328067_u1vu92jo97h.eot');
+  src: url('//at.alicdn.com/t/font_1328067_u1vu92jo97h.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1328067_u1vu92jo97h.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1328067_u1vu92jo97h.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1328067_u1vu92jo97h.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1328067_u1vu92jo97h.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/*项目公共样式*/
+.oneem{display: inline-block;width:1em;}
+.halfem{display: inline-block;width:0.5em;}
+.content{width:100%;height:calc(100vh - 110px);background-color: #fff;}
+/*为保证键盘弹起 临时中转input*/
+#keyboard-temp-input{width:0;height:0;border:none;box-shadow:none;background:rgba(0,0,0,0);}
+body .goodsmange header span.manage-cancel-btn{width: 3em!important;}
+body .mint-loadmore-bottom{
+  line-height: 50px;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+		<title>demo</title>
+		<style>
+			/*启动页 load*/
+			@keyframes startTextAni{ 0%{width:8em;} 100%{width:5em;} }
+			@-webkit-keyframes startTextAni{ 0%{width:8em;} 100%{width:5em;} }
+			body.loading {width: 100%;height: 100vh;width: 100%;line-height: 97vh;text-align: center;position: relative;background:#fff;}
+			body.loading:before {display:inline-block;content: '';width: 100%;height:5vh;line-height:5vh;position: absolute;top:85vh;left: 0;content:'应用启动中 . . .';font-size: 20px;color: #ccc;animation:startTextAni linear 3s infinite;overflow: hidden;margin-left: calc(50% - 3em);text-align:left;float:left;}
+			body.loading:after {display: block;content: '';width: 100%;height: 100vh;position: absolute;top: 0;left: 0;background:url("./static/img/app-loading-footer.jpg") center no-repeat;background-position: center 25vh;-webkit-background-size: 16% auto;background-size: 16% auto;}
+		</style>
+		<style id="global"></style>
+		<link rel="stylesheet" type="text/css" href='./static/css/api.css'/>
+		<script type="text/javascript" src='./static/js/jquery.min.js'></script>
+		<script type="text/javascript" src='./static/js/api.js'></script>
+		<script type="text/javascript" src='./static/js/common.js'></script>
+		<script src="./static/js/vconsole.min.js"></script>
+		<script>
+			var isApp = false, vm, pageready = false;
+			var safeArea = {top: 24, left: 0, bottom: 0, right: 0,};
+			localStorage.setItem('SAFEAREA', JSON.stringify(safeArea));
+			setStatusFotter(safeArea);
+			window.onload = function() {pageready = true;};
+			$(function() {
+				try {
+					/*原生 status*/
+					apiready = function() {
+						isApp = true;
+						if (window.api) {
+							safeArea = api.safeArea;    // JSON对象，如{top:20, left:0, bottom:0, right:0}
+							localStorage.setItem('SAFEAREA', JSON.stringify(safeArea));
+							setStatusFotter(safeArea);
+							//物理返回键监听 首页点返回两次退出应用
+							fnRegisterKeyBack();
+						}
+					};
+				} catch (e) {}
+			});
+			//初始化状态栏和footer
+			function setStatusFotter() {
+				var timer;
+				timer = setInterval(function() {
+					if (pageready) {
+						var wh = $(window).height();
+						$("style#global").html("body #page-head{height:"+safeArea.top+"px;}body #page-footer{height:"+safeArea.bottom+"px;}body #page-body{height:calc(100vh - "+(safeArea.bottom+safeArea.top)+"px)}body .mint-popup{padding-bottom:"+safeArea.bottom+"px;}.page-push{top:"+safeArea.top+"px!important;}");
+						clearInterval(timer);
+					}
+				}, 20);
+			}
+			//修改状态栏颜色
+			function changeStatefn(options) { //"dark"“light”
+				if (window.api) {
+					if (options && options.color) {
+						api && api.setStatusBarStyle({
+							'style': options.color,
+						});
+					}
+				}
+			}
+		</script>
+		<script src="https://webapi.amap.com/maps?v=1.4.15&key=7bba6e692e5c17f7fd65356d0cded4d6&plugin=AMap.Autocomplete,AMap.Geocoder"></script>
+		<script src="http://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+	</head>
+	<body class="loading">
+		<div id="app" style="display: none;"></div>
+	</body>
+</html>

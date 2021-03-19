@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>安装包下载</title>
+    <link rel="stylesheet" type="text/css" href="./static/css/api.css"/>
+    <style>
+    	@keyframes bganimate {
+		    100% {
+			    background-color: rgba(0, 0, 0, 0.6);
+		    }
+	    }
+	    @-webkit-keyframes bganimate {
+		    100% {
+			    background-color: rgba(0, 0, 0, 0.6);
+		    }
+	    }
+	    html {
+		    width: 100vw;
+		    height: 100vh;
+		    font-size: 24px;
+		    overflow: hidden;
+		    background: #001611 url('./static/img/loginbg.jpg') 0 0 no-repeat;
+		    -webkit-background-size: auto 100%;
+		    background-size: auto 100%;
+		    background-position: center center;
+	    }
+	    body {
+		    width: 100vw;
+		    height: 100vh;
+		    background-color: rgba(0, 0, 0, 0.25);
+		    transitiom: bganimate 2s linear infinite alternate;
+		    -webkit-animation: bganimate 2s linear infinite alternate;
+	    }
+	    body.hidden {
+		    visibility: hidden;
+	    }
+	    #conupdate {
+		    width: 100%;
+		    height: 100vh;
+		    float: left;
+		    overflow: hidden;
+		    box-sizing: border-box;
+	    }
+	    #conupdate p {
+		    text-align: center;
+		    font-size: 0.5rem;
+		    color: #eee;
+		    line-height: 0.9rem;
+	    }
+	    #conupdate p.text {
+		    margin-top: 25vh;
+		    font-size: 0.9rem;
+		    line-height: 1.5rem;
+		    color: #fff;
+		    text-shadow: 0 0 7px rgba(255, 255, 255, 0.5);
+	    }
+	    #conupdate p.percent {
+		    line-height: 1.5rem;
+		    font-size: 0.6rem;
+		    color: #17a546;
+	    }
+	    #conupdate p.cancel {
+		    margin-top: 30vh;
+		    opacity: 0.8;
+	    }
+	    #conupdate p.cancel img {
+		    width: 2rem;
+		    height: 2rem;
+	    }
+	    #conupdate div {
+		    width: 14rem;
+		    height: 2px;
+		    margin: 1.2rem auto 0;
+		    border: 1px solid rgb(77, 189, 115);
+		    border-radius: 1px;
+		    box-shadow: 0 1px 8px -1px rgba(77, 189, 115, 0.6);
+	    }
+	    #conupdate div span {
+		    display: inline-block;
+		    float: left;
+		    width: 0%;
+		    height: 100%;
+		    background-color: #00e04c;
+		    transition: width 0.3s;
+		    -webkit-transition: width 0.3s;
+	    }
+    </style>
+</head>
+<body class="hidden">
+	<div id="conupdate">
+		<p class="text">安装包下载中</p>
+		<p class="textplus">请稍候 ...</p>
+		<div>
+			<span></span>
+		</div>
+		<p class="percent">0%</p>
+		<p class="cancel" onclick="canceldown()" tapmode><img src="./static/img/updatecancel.png" alt=""/></p>
+	</div>
+</body>
+<script type="text/javascript" src="./static/js/api.js"></script>
+<script type="text/javascript" src="./static/js/zepto.min.js"></script>
+<script type="text/javascript">
+	var downurl = null;
+	var progressnum = 0;
+	var ww = $(window).width();
+	$('html').css('font-size', (ww / 16) + 'px');
+	apiready = function() {
+		var bodydom = document.getElementById('conupdate');
+		if (api.statusBarAppearance) {$api.fixStatusBar(bodydom);}
+		downurl = api.pageParam.downurl;
+		$('body').removeClass('hidden');
+	};
+	
+	//进度条更新
+	function goprogress(num) {
+		if (num > 0 && num > progressnum) {
+			progressnum = num;
+		}
+		$('#conupdate p.percent').html(progressnum + '%');
+		$('#conupdate div span').css('width', progressnum + '%');
+	}
+	
+	//取消下载
+	function canceldown() {
+		api.cancelDownload({
+			url: downurl,
+		});
+		api.closeWin({
+			name: 'update',
+		});
+	}
+</script>
+</html>

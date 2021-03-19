@@ -1,0 +1,91 @@
+html{ font-family: sans-serif;font-size:13.3333333333vw;}
+html,body,header,section,footer,div,ul,ol,li,img,a,span,em,del,legend,center,strong,var,fieldset,form,label,dl,dt,dd,cite,input,hr,time,mark,code,figcaption,figure,textarea,h1,h2,h3,h4,h5,h6,p{margin: 0; border: 0; padding: 0; font-style: normal;}
+html,body{ -webkit-touch-callout: none; -webkit-text-size-adjust: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-user-select: none; background-color: #fff;}
+nav,article,aside,details,main,header,footer,section,fieldset,figcaption,figure{ display: block;}
+img,a,button,em,del,strong,var,label,cite,small,time,mark,code,textarea{ display: inline-block;}
+header,section,footer{ position: relative;}
+ol,ul{ list-style: none;}
+i{font-style: normal;}
+input,button,textarea{ border: 0; margin: 0; padding: 0; font-size: 1em; line-height: 1em;background-color: rgba(0, 0, 0, 0);}
+span{ display: inline-block;}
+a:active, a:hover{ outline: 0;}
+a, a:visited{ text-decoration: none;}
+label, .wordWrap{ word-wrap: break-word; word-break: break-all;}
+table{ border-collapse: collapse; border-spacing: 0;}
+td,th{ padding: 0;}
+.hidden{display:none !important;}
+.clearfix:after{ content: ' '; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+.loading_more{ display: block; height: 1.5em; width: 100%;}
+.loading_more:before{ display: inline-block; vertical-align: text-bottom; content: ' '; height: 16px; width: 16px; margin-right: 6px; background: url(../image/loading_more.gif) no-repeat center; -webkit-background-size: contain; background-size: contain;}
+.loading_more:after{ content: '加载更多';}
+/*loader*/
+.loadinglayer{ position: absolute;top: 0;left: 0;right: 0;bottom: 0;background-color: #F7F9FB;z-index: 99999;overflow: hidden;}
+.loadinglayer .loader{position: absolute; top: 28%; left: 40%; margin-left: 10%; transform: translate3d(-50%, -50%, 0); width: 100%; height: 2%; text-align: center;}
+.loadinglayer .dot{width: 7vw;height: 7vw; background: #3ac; border-radius: 100%; display: inline-block; animation: slide 1s infinite;}
+.loadinglayer .dot:nth-child(1){ animation-delay: 0.1s; background: #5abbd7;}
+.loadinglayer .dot:nth-child(2){ animation-delay: 0.2s; background: #5cbdcb;}
+.loadinglayer .dot:nth-child(3){ animation-delay: 0.3s; background: #40cdbf;}
+.loadinglayer .dot:nth-child(4){ animation-delay: 0.4s; background: #2fd7af;}
+.loadinglayer .dot:nth-child(5){ animation-delay: 0.5s; background: #21e1a2;}
+@keyframes slide{ 0%{ transform: scale(1);}
+	50%{ opacity: 0.3; transform: scale(2);}
+	100%{ transform: scale(1);}
+}
+@-moz-keyframes slide{ 0%{ transform: scale(1);}
+	50%{ opacity: 0.3; transform: scale(2);}
+	100%{ transform: scale(1);}
+}
+@-webkit-keyframes slide{ 0%{ transform: scale(1);}
+	50%{ opacity: 0.3; transform: scale(2);}
+	100%{ transform: scale(1);}
+}
+@-o-keyframes slide{ 0%{ transform: scale(1);}
+	50%{ opacity: 0.3; transform: scale(2);}
+	100%{ transform: scale(1);}
+}
+/*page loading*/
+.pageloading{ width: 2rem; height: 2rem;margin:3rem auto 0;position: relative;}
+.pageloading-absolute{ position: absolute; left: 50%; top: 50%; height: 1.2rem; width: 1.2rem; margin-top: -0.6rem; margin-left: -0.6rem; -webkit-animation: loading-center-absolute 1s infinite; animation: loading-center-absolute 1s infinite;}
+.object{ width: 0.4rem; height: 0.4rem; background-color: #c4e9d4; float: left; -moz-border-radius: 50% 50% 50% 50%; -webkit-border-radius: 50% 50% 50% 50%; border-radius: 50% 50% 50% 50%; margin-right: 0.4rem; margin-bottom: 0.4rem;}
+.object:nth-child(2n+0){ margin-right: 0px;}
+.pageload_one{ -webkit-animation: object_one 1s infinite; animation: object_one 1s infinite;}
+.pageload_two{ -webkit-animation: object_two 1s infinite; animation: object_two 1s infinite;}
+.pageload_three{ -webkit-animation: object_three 1s infinite; animation: object_three 1s infinite;}
+.pageload_four{ -webkit-animation: object_four 1s infinite; animation: object_four 1s infinite;}
+@-webkit-keyframes loading-center-absolute{ 100%{ -ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);}}
+@keyframes loading-center-absolute{ 100%{ -ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);}}
+@-webkit-keyframes object_one{ 50%{ -ms-transform: translate(0.4rem, 0.4rem); -webkit-transform: translate(0.4rem, 0.4rem); transform: translate(0.4rem, 0.4rem);}}
+@keyframes object_one{ 50%{ -ms-transform: translate(0.4rem, 0.4rem); -webkit-transform: translate(0.4rem, 0.4rem); transform: translate(0.4rem, 0.4rem);}}
+@-webkit-keyframes object_two{ 50%{ -ms-transform: translate(-0.4rem, 0.4rem); -webkit-transform: translate(-0.4rem, 0.4rem); transform: translate(-0.4rem, 0.4rem);}}
+@keyframes object_two{ 50%{ -ms-transform: translate(-0.4rem, 0.4rem); -webkit-transform: translate(-0.4rem, 0.4rem); transform: translate(-0.4rem, 0.4rem);}}
+@-webkit-keyframes object_three{ 50%{ -ms-transform: translate(0.4rem, -0.4rem); -webkit-transform: translate(0.4rem, -0.4rem); transform: translate(0.4rem, -0.4rem);}}
+@keyframes object_three{ 50%{ -ms-transform: translate(0.4rem, -0.4rem); -webkit-transform: translate(0.4rem, -0.4rem); transform: translate(0.4rem, -0.4rem);}}
+@-webkit-keyframes object_four{ 50%{ -ms-transform: translate(-0.4rem, -0.4rem); -webkit-transform: translate(-0.4rem, -0.4rem); transform: translate(-0.4rem, -0.4rem);}}
+@keyframes object_four{ 50%{ -ms-transform: translate(-0.4rem, -0.4rem); -webkit-transform: translate(-0.4rem, -0.4rem); transform: translate(-0.4rem, -0.4rem);}}
+/*上拉加载 效果样式*/
+.dropload-up,.dropload-down{ position: relative; height: 0; overflow: hidden; font-size: 12px; -webkit-transform: translateZ(0); transform: translateZ(0);}
+.dropload-down{ height: 50px;}
+.dropload-refresh,.dropload-update,.dropload-load,.dropload-noData{ height: 50px; line-height: 50px; text-align: center;}
+.dropload-load .loading{ display: inline-block; height: 15px; width: 15px; border-radius: 100%; margin: 6px; border: 2px solid #666; border-bottom-color: transparent; vertical-align: middle; -webkit-animation: rotate 0.75s linear infinite; animation: rotate 0.75s linear infinite;}
+@-webkit-keyframes rotate{
+	0%{ -webkit-transform: rotate(0deg);}
+	50%{ -webkit-transform: rotate(180deg);}
+	100%{ -webkit-transform: rotate(360deg);}
+}
+@keyframes rotate{
+	0%{ transform: rotate(0deg);}
+	50%{ transform: rotate(180deg);}
+	100%{ transform: rotate(360deg);}
+}
+.taskbody .container .mescroll-upwarp{height:0.3rem;line-height:0.3rem;}
+.clearfix:before,
+.clearfix:after{
+	content: '';
+	display: table;
+}
+.clearfix:after{
+	clear: both;
+}
+body{
+	font-size: 12px;
+}

@@ -1,0 +1,29 @@
+{
+  "name": "frp_expertsystem_answer_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "apicloud wifiStart --port 1234",
+    "u": "npm run update && npm run update",
+    "ua": "npm run update && npm run updateAll",
+    "update": "apicloud wifiSync --project ./ --updateAll false --port 1234",
+    "updateAll": "apicloud wifiSync --project ./ --updateAll true --port 1234",
+    "startH5": "cd widget/project && npm run dev",
+    "buildH5": "cd widget/project && npm run build",
+    "applog": "apicloud wifiLog --port 1234"
+  },
+  "keywords": [
+    "apicloud about code"
+  ],
+  "author": "louyunxi",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^6.0.0",
+    "js-cookie": "^2.2.1",
+    "vant": "^2.12.10"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.13.3"
+  }
+}

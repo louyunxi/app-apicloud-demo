@@ -1,0 +1,26 @@
+.no-group{
+  height:65vh;
+  padding-top:24vw;
+  box-sizing:border-box;
+  text-align:center;
+  img{
+    width:58px;
+}
+  p.nodata-help{
+    width:100%;
+    line-height:50px;
+    font-size:36px;
+    color:#000;
+    margin-top:68px;
+    text-indent:10px;
+}
+  p.nodata-help-plus{
+    margin-top:16px;
+    margin-bottom:28px;
+    width:100%;
+    line-height:40px;
+    font-size:28px;
+    color:#666666;
+}
+  .morecolor{width:180px;height:54px;border-radius:8px;color:#fff;font-size:24px;}
+}

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget id="A6169100567390" version="0.0.1"> 
-  <name>神农口袋-专家系统-专家端</name>  
-  <description>神农口袋-专家系统-专家端</description>  
-  <author email="http://192.168.31.16:8080" href="./widget/apicloud/index.html">神农口袋-专家系统-专家端</author>
+<widget id="A60195758121482019" version="0.0.1"> 
+  <name>demo</name>  
+  <description>demo</description>  
+  <author email="http://192.168.31.16:8080" href="./widget/apicloud/index.html">demo</author>
   <content src="./widget/apicloud/index.html"/>
   <preference name="pageBounce" value="false"/>
   <preference name="appBackground" value="rgba(255,255,255,1)"/>  
